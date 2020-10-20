@@ -11,3 +11,5 @@ resultTwo=`awk 'BEGIN{printf("%0.2f",'$firstInput' * '$secondInput' + '$thirdInp
 echo "Result:" $resultTwo
 resultThree=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' / '$thirdInput' )}'`
 echo "Result:" $resultThree
+resultFour=`awk 'BEGIN{printf("%0.2f",'$firstInput' % '$secondInput' + '$thirdInput')}'`
+echo "Result:" $resultFour
