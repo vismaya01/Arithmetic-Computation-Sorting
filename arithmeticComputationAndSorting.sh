@@ -13,13 +13,13 @@ read -p "Enter second input:" secondInput
 read -p "Enter third input :" thirdInput
 
 #COMPUTE ARITHMETIC OPERATION
-result1=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' * '$thirdInput')}'`
+result1=`awk 'BEGIN{printf("%0.2f", '$firstInput' + '$secondInput' * '$thirdInput')}'`
 echo "Result:" $result1
-result2=`awk 'BEGIN{printf("%0.2f",'$firstInput' * '$secondInput' + '$thirdInput')}'`
+result2=`awk 'BEGIN{printf("%0.2f", '$firstInput' * '$secondInput' + '$thirdInput')}'`
 echo "Result:" $result2
-result3=`awk 'BEGIN{printf("%0.2f",'$firstInput' + '$secondInput' / '$thirdInput' )}'`
+result3=`awk 'BEGIN{printf("%0.2f", '$firstInput' + '$secondInput' / '$thirdInput')}'`
 echo "Result:" $result3
-result4=`awk 'BEGIN{printf("%0.2f",'$firstInput' % '$secondInput' + '$thirdInput')}'`
+result4=`awk 'BEGIN{printf("%0.2f", '$firstInput' % '$secondInput' + '$thirdInput')}'`
 echo "Result:" $result4
 
 #TO STORE THE DICTIONARY
@@ -34,3 +34,8 @@ do
   array[((index))]=${arithmaticOperation[((result$((index+1))))]}
 done
 echo "${array[@]}"
+
+#TO SORTING RESULTS IN DECENDING ORDER
+sortDescendingArray=( $( printf "%s\n" "${array[@]}" | sort -nr ) )
+echo ${sortDescendingArray[@]}
+
